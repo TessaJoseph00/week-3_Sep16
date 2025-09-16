@@ -1,6 +1,5 @@
-import seaborn as sns
 import pandas as pd
-
+import numpy as np
 
 #1.
 def fib(n):
@@ -48,9 +47,6 @@ print("n=2  ->",to_binary(2))
 print("n=12 ->",to_binary(12))
 
 #3a.
-import pandas as pd
-import numpy as np
-
 url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
 df_bellevue = pd.read_csv(url)
 
@@ -76,6 +72,7 @@ def task_1():
 column_list = task_1()
 print("\nList of columns sorted by missing values:", column_list)
 
+#3b.
 def task_2():
     """
     Returns a dataframe with two columns:
@@ -98,6 +95,7 @@ def task_2():
 
 df_yearly = task_2()
 
+#3c.
 def task_3():
     """
     Returns a series with
@@ -121,6 +119,7 @@ def task_3():
 
 gender_avg_age = task_3()
 
+#3d.
 def task_4():
     """
     Returns the 5 most common professions in order of prevalence
