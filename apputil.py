@@ -50,7 +50,7 @@ print("n=12 ->",to_binary(12))
 url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
 df_bellevue = pd.read_csv(url)
 
-def task_1():
+def task_i():
     """
     Returns a list of all column names sorted by missing values  
     Removing whitespaces and convert into lowercase for gender column
@@ -69,11 +69,11 @@ def task_1():
     # Return list of column names in order of missing values
     return sorted_columns.index.tolist()
 
-column_list = task_1()
+column_list = task_i()
 print("\nList of columns sorted by missing values:", column_list)
 
 #3b.
-def task_2():
+def task_ii():
     """
     Returns a dataframe with two columns:
     - year: the year of each entry
@@ -93,10 +93,10 @@ def task_2():
     
     return total_admissions
 
-df_yearly = task_2()
+df_yearly = task_ii()
 
 #3c.
-def task_3():
+def task_iii():
     """
     Returns a series with
     Index: gender (m or w), 
@@ -117,10 +117,10 @@ def task_3():
     
     return mean_age_gender
 
-gender_avg_age = task_3()
+gender_avg_age = task_iii()
 
 #3d.
-def task_4():
+def task_iv():
     """
     Returns the 5 most common professions in order of prevalence
     """
@@ -137,4 +137,4 @@ def task_4():
     return top_5_professions
     
 print("\n3d.")
-print("Top 5 professions:", task_4())
+print("Top 5 professions:", task_iv())
