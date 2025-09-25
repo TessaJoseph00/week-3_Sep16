@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 #1.
-def fib(n):
+def fibonacci(n):
     """
     Return the nth Fibonacci number using recursion.
     The sequence starts with 0 and 1, and each number is the sum 
@@ -20,10 +20,8 @@ def fib(n):
         return 1
     # Recursive case: sum of the two previous numbers
     else:
-        return fib(n - 1) + fib(n - 2)
-print("\n1. ")
-print("n=5 ->",fib(5))
-print("n=9 ->",fib(9))
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 #2.
 def to_binary(n):
@@ -42,20 +40,17 @@ def to_binary(n):
     # Recursive step: binary of quotient + remainder
     return to_binary(n // 2) + str(n % 2)
 
-print("\n2. ")
-print("n=2  ->",to_binary(2)) 
-print("n=12 ->",to_binary(12))
 
 #3a.
-url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
-df_bellevue = pd.read_csv(url)
 
 def task_1():
     """
     Returns a list of all column names sorted by missing values  
     Removing whitespaces and convert into lowercase for gender column
     """
-    
+    url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
+    df_bellevue = pd.read_csv(url)
+
     #Removing whitespaces and convert into lowercase for gender
     df_bellevue['gender'] = df_bellevue['gender'].str.lower().str.strip()
     
@@ -69,8 +64,7 @@ def task_1():
     # Return list of column names in order of missing values
     return sorted_columns.index.tolist()
 
-column_list = task_1()
-print("\nList of columns sorted by missing values:", column_list)
+
 
 #3b.
 def task_2():
@@ -79,6 +73,9 @@ def task_2():
     - year: the year of each entry
     - total_admissions: total number of entries (immigrant admissions) for that year
     """
+    url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
+    df_bellevue = pd.read_csv(url)
+
     # Ensure date_in is a datetime column
     df_bellevue['date_in'] = pd.to_datetime(df_bellevue['date_in'])
     
@@ -93,7 +90,6 @@ def task_2():
     
     return total_admissions
 
-df_yearly = task_2()
 
 #3c.
 def task_3():
@@ -102,6 +98,9 @@ def task_3():
     Index: gender (m or w), 
     Values: average age for each gender
     """
+    url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
+    df_bellevue = pd.read_csv(url)
+
     #Removing whitespaces and convert into lowercase for gender
     df_bellevue['gender'] = df_bellevue['gender'].str.lower().str.strip()
     
@@ -117,13 +116,16 @@ def task_3():
     
     return mean_age_gender
 
-gender_avg_age = task_3()
+
 
 #3d.
 def task_4():
     """
     Returns the 5 most common professions in order of prevalence
     """
+    url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
+    df_bellevue = pd.read_csv(url)
+
     # Checking for missing or blank values
     if df_bellevue['profession'].isnull().any() or (df_bellevue['profession'].str.strip() == '').any():
         print("Some profession entries are missing or blank")
@@ -136,5 +138,22 @@ def task_4():
 
     return top_5_professions
     
-print("\n3d.")
-print("Top 5 professions:", task_4())
+
+
+# Your test calls go down here:
+if __name__ == "__main__":
+    print("\n1. ")
+    print("n=5 ->",fibonacci(5))
+    print("n=9 ->",fibonacci(9))
+    print("\n2. ")
+    print("n=2  ->",to_binary(2)) 
+    print("n=12 ->",to_binary(12))
+    print("\n3a. ")
+    column_list = task_1()
+    print("\nList of columns sorted by missing values:", column_list)
+    print("\n3b. ")
+    df_yearly = task_2()
+    print("\n3c. ")
+    gender_avg_age = task_3()
+    print("\n3d.")
+    print("Top 5 professions:", task_4())
