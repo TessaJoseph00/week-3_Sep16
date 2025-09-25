@@ -62,6 +62,7 @@ def task_1():
     # Return list of column names
     return sorted_columns["index"].tolist() 
 
+
 #3b.
 def task_2():
     """
@@ -134,7 +135,6 @@ def task_4():
     return top_5_professions
     
 
-# Your test calls go down here:
 if __name__ == "__main__":
     print("\n1. ")
     print("n=5 ->",fibonacci(5))
