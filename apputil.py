@@ -22,7 +22,6 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
-
 #2.
 def to_binary(n):
     """
@@ -39,7 +38,6 @@ def to_binary(n):
         return "1"
     # Recursive step: binary of quotient + remainder
     return to_binary(n // 2) + str(n % 2)
-
 
 #3a.
 
@@ -64,8 +62,6 @@ def task_1():
     # Return list of column names in order of missing values
     return sorted_columns.index.tolist()
 
-
-
 #3b.
 def task_2():
     """
@@ -89,7 +85,6 @@ def task_2():
     print(total_admissions)
     
     return total_admissions
-
 
 #3c.
 def task_3():
@@ -138,7 +133,6 @@ def task_4():
 
     return top_5_professions
     
-
 
 # Your test calls go down here:
 if __name__ == "__main__":
