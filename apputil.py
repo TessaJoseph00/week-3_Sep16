@@ -53,14 +53,14 @@ def task_1():
     df_bellevue['gender'] = df_bellevue['gender'].str.lower().str.strip()
     
     # Count missing values in each column and sort
-    sorted_columns = df_bellevue.isnull().sum().sort_values()
+    sorted_columns = (df_bellevue.isnull().sum().reset_index(name="missing").sort_values(by=["missing", "index"]))
     
     # Print missing values count in each column
     print("\n3a. Missing values per column:")
     print(sorted_columns)
     
-    # Return list of column names in order of missing values
-    return sorted_columns.index.tolist()
+    # Return list of column names
+    return sorted_columns["index"].tolist() 
 
 #3b.
 def task_2():
